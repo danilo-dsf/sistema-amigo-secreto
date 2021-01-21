@@ -1,4 +1,4 @@
-import { Handler, NextFunction, Request, Response } from 'express';
+import { Request, Response } from 'express';
 import DeleteParticipantService from 'services/DeleteParticipantService';
 import FindAllParticipants from 'services/FindAllParticipantsService';
 import SaveNewParticipantService from 'services/SaveNewParticipantService';
@@ -21,7 +21,8 @@ export default class ParticipantController {
   }
 
   public async update(request: Request, response: Response): Promise<Response> {
-    const { name, email, id } = request.body;
+    const { name, email } = request.body;
+    const { id } = request.params;
 
     const updateParticipant = new UpdateParticipantService();
 

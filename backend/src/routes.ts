@@ -9,17 +9,19 @@ const drawController = new DrawController();
 
 routes.get('/participants', participantController.index);
 
-routes.patch('/participants', celebrate({
-  [Segments.BODY]: {
+routes.patch('/participants/:id', celebrate({
+  [Segments.PARAMS]: {
     id: Joi.string().required(),
+  },
+  [Segments.BODY]: {
     name: Joi.string().required(),
     email: Joi.string().email().required(),
-  }
+  },
 }), participantController.update);
 
 routes.delete('/participants/:id', celebrate({
   [Segments.PARAMS]: {
-    id: Joi.string().uuid().required(),
+    id: Joi.string().required(),
   }
 }), participantController.delete);
 
