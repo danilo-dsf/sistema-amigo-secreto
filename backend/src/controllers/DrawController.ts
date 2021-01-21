@@ -7,9 +7,9 @@ export default class DrawController {
     const drawParticipantsService = new DrawParticipantsService;
 
     try {
-      await drawParticipantsService.execute();
+      const drawnParticipants = await drawParticipantsService.execute();
   
-      return response.json();
+      return response.json(drawnParticipants);
     } catch (error) {
       return response.status(error.statusCode).json({
         status: 'error',

@@ -9,7 +9,7 @@ interface IDrawnParticipants {
 }
 
 class DrawParticipantsService {
-  async execute(): Promise<void> {
+  async execute(): Promise<IDrawnParticipants[]> {
     const sendEmailToParticipants = new SendEmailToParticipantsService();
     const participantsRepository = getRepository(Participant);
 
@@ -20,7 +20,7 @@ class DrawParticipantsService {
     }
 
     if (allParticipants.length < 3) {
-      throw new AppError('Não há participantes suficientes para iniciar o sorteio.');
+      throw new AppError('Não há participantes suficientes para iniciar o sorteio (no mínimo 3 participantes).');
     }
 
     const shuffledParticipants = shuffleParticipants(allParticipants);
@@ -42,6 +42,8 @@ class DrawParticipantsService {
     });
 
     sendEmailToParticipants.execute(drawnParticipants);
+
+    return drawnParticipants;
   }
 }
 
