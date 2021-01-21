@@ -15,11 +15,11 @@ class DrawParticipantsService {
     const allParticipants = await participantsRepository.find();
 
     if (!allParticipants) {
-      throw new Error('No participants found.');
+      throw new Error('Nenhum participante encontrado.');
     }
 
     if (allParticipants.length < 3) {
-      throw new Error('No participants enought to initiate.');
+      throw new Error('Não há participantes suficientes para iniciar o sorteio.');
     }
 
     const shuffledParticipants = shuffleParticipants(allParticipants);

@@ -15,7 +15,7 @@ class SaveNewParticipantService {
     });
 
     if (checkParticipantExists) {
-      throw new Error('This participant already exists.');
+      throw new Error('Esse participante já está cadastrado.');
     }
 
     const participant = participantsRepository.create({ name, email });

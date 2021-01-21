@@ -7,6 +7,10 @@ class FindAllParticipants {
 
     const participants = participantsRepository.find();
 
+    if (!participants) {
+      throw new Error('Nenhum participante cadastrado.');
+    }
+
     return participants;
   }
 }

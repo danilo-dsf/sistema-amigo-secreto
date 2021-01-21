@@ -14,7 +14,7 @@ class UpdateParticipantService {
     const participant = await participantsRepository.findOne(id);
 
     if (!participant) {
-      throw new Error('Participant not found!');
+      throw new Error('Participante não encontrado!');
     }
 
     const checkParticipantEmailExists = await participantsRepository.findOne({
@@ -22,7 +22,7 @@ class UpdateParticipantService {
     });
 
     if (checkParticipantEmailExists && checkParticipantEmailExists.id !== id) {
-      throw new Error('This email is already in use!');
+      throw new Error('Esse endereço de e-mail já está em uso!');
     }
 
     participant.name = name;

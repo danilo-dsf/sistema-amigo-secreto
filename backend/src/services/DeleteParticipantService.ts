@@ -12,7 +12,7 @@ class DeleteParticipantService {
     const checkParticipantExists = await participantsRepository.findOne(id);
 
     if (!checkParticipantExists) {
-      throw new Error('This participant does not exist.');
+      throw new Error('Esse participante não existe.');
     }
 
     await participantsRepository.delete(id);
