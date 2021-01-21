@@ -1,3 +1,4 @@
+import AppError from "errors/AppError";
 import Participant from "model/Participant";
 import { getRepository } from "typeorm";
 
@@ -12,7 +13,7 @@ class DeleteParticipantService {
     const checkParticipantExists = await participantsRepository.findOne(id);
 
     if (!checkParticipantExists) {
-      throw new Error('Esse participante não existe.');
+      throw new AppError('Esse participante não existe.');
     }
 
     await participantsRepository.delete(id);

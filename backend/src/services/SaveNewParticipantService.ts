@@ -1,3 +1,4 @@
+import AppError from "errors/AppError";
 import Participant from "model/Participant";
 import { getRepository } from "typeorm";
 
@@ -15,7 +16,7 @@ class SaveNewParticipantService {
     });
 
     if (checkParticipantExists) {
-      throw new Error('Esse participante já está cadastrado.');
+      throw new AppError('Esse participante já está cadastrado.');
     }
 
     const participant = participantsRepository.create({ name, email });

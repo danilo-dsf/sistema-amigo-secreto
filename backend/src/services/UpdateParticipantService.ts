@@ -1,3 +1,4 @@
+import AppError from "errors/AppError";
 import Participant from "model/Participant";
 import { getRepository } from "typeorm";
 
@@ -14,7 +15,7 @@ class UpdateParticipantService {
     const participant = await participantsRepository.findOne(id);
 
     if (!participant) {
-      throw new Error('Participante não encontrado!');
+      throw new AppError('Participante não encontrado!');
     }
 
     const checkParticipantEmailExists = await participantsRepository.findOne({
@@ -22,7 +23,7 @@ class UpdateParticipantService {
     });
 
     if (checkParticipantEmailExists && checkParticipantEmailExists.id !== id) {
-      throw new Error('Esse endereço de e-mail já está em uso!');
+      throw new AppError('Esse endereço de e-mail já está em uso!');
     }
 
     participant.name = name;

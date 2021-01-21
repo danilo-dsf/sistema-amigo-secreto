@@ -1,3 +1,4 @@
+import AppError from "errors/AppError";
 import Participant from "model/Participant";
 import { getRepository } from "typeorm";
 import SendEmailToParticipantsService from "./SendEmailToParticipantsService";
@@ -15,11 +16,11 @@ class DrawParticipantsService {
     const allParticipants = await participantsRepository.find();
 
     if (!allParticipants) {
-      throw new Error('Nenhum participante encontrado.');
+      throw new AppError('Nenhum participante encontrado.');
     }
 
     if (allParticipants.length < 3) {
-      throw new Error('Não há participantes suficientes para iniciar o sorteio.');
+      throw new AppError('Não há participantes suficientes para iniciar o sorteio.');
     }
 
     const shuffledParticipants = shuffleParticipants(allParticipants);

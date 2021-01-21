@@ -1,3 +1,4 @@
+import AppError from "errors/AppError";
 import Participant from "model/Participant";
 import { getRepository } from "typeorm";
 
@@ -8,7 +9,7 @@ class FindAllParticipants {
     const participants = participantsRepository.find();
 
     if (!participants) {
-      throw new Error('Nenhum participante cadastrado.');
+      throw new AppError('Nenhum participante cadastrado.');
     }
 
     return participants;
