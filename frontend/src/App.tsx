@@ -3,13 +3,13 @@ import api from './services/api';
 import './App.css'
 
 interface IParticipant {
-  id: string;
+  id: number;
   name: string;
   email: string;
 }
 
 interface IRawParticipant {
-  id: string;
+  id: number;
   name: string;
   email: string;
   created_at: string;
@@ -75,7 +75,7 @@ const App: React.FC = () => {
     formElement.reset();
   }
 
-  async function handleDeleteParticipant(id: string) {
+  async function handleDeleteParticipant(id: number) {
     try {
       await api.delete(`/participants/${id}`);
 
