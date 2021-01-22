@@ -12,6 +12,8 @@ ATENÇÃO: A aplicação está preparada para execução somente em ambiente de 
 
 - No banco **PostgreSQL**, o usuário deve criar um banco de dados com o nome **<code>db_amigo_secreto</code>**
 
+- O sistema está configurado para conectar utilizando o usuário **<code>postgres</code>** e senha **<code>postgres</code>** (*caso queira alterar isso, basta alterar os dados de conexão no arquivo ormconfig.json*)
+
 - Para criar as tabelas do banco de dados, entre na pasta **frontend** e execute o comando **<code>yarn typeorm migration:run</code>**
 
 - Para executar o backend, basta entrar na sua respectiva pasta e executar, no terminal, o comando **<code>yarn dev:server</code>**
