@@ -4,7 +4,7 @@
     "host": "localhost",
     "port": 5432,
     "username": "postgres",
-    "password": "docker",
+    "password": "postgres",
     "database": "db_amigo_secreto",
     "entities": [
       "./src/model/*.ts"
