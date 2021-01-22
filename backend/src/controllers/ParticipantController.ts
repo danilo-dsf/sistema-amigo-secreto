@@ -30,7 +30,7 @@ export default class ParticipantController {
       const participant = await updateParticipant.execute({
         name,
         email,
-        id,
+        id: Number(id),
       });
 
       return response.json(participant);
@@ -48,7 +48,7 @@ export default class ParticipantController {
     const deleteParticipant = new DeleteParticipantService();
 
     try {
-      deleteParticipant.execute({ id });
+      deleteParticipant.execute({ id: Number(id) });
 
       return response.status(200).json();
     } catch (error) {
@@ -69,6 +69,7 @@ export default class ParticipantController {
 
       return response.json(participant);
     } catch (error) {
+      console.log(error);
       return response.status(error.statusCode).json({
         status: 'error',
         message: error.message,

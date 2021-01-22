@@ -11,7 +11,7 @@ routes.get('/participants', participantController.index);
 
 routes.patch('/participants/:id', celebrate({
   [Segments.PARAMS]: {
-    id: Joi.string().required(),
+    id: Joi.number().required(),
   },
   [Segments.BODY]: {
     name: Joi.string().required(),
@@ -21,7 +21,7 @@ routes.patch('/participants/:id', celebrate({
 
 routes.delete('/participants/:id', celebrate({
   [Segments.PARAMS]: {
-    id: Joi.string().required(),
+    id: Joi.number().required(),
   }
 }), participantController.delete);
 

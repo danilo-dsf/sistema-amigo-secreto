@@ -3,7 +3,7 @@ import Participant from "model/Participant";
 import { getRepository } from "typeorm";
 
 interface IRequest {
-  id: string;
+  id: number;
   name: string;
   email: string;
 }

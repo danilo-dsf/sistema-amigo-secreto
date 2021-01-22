@@ -8,10 +8,10 @@ export default class CreateTableParticipants1611154531725 implements MigrationIn
             columns: [
                 {
                     name: 'id',
-                    type: 'uuid',
+                    type: 'integer',
                     isPrimary: true,
-                    generationStrategy: 'uuid',
-                    default: 'uuid_generate_v4()',
+                    isGenerated: true,
+                    generationStrategy: 'increment',
                 },
                 {
                     name: 'name',
