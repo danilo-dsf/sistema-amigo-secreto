@@ -26,6 +26,16 @@ ATENÇÃO: A aplicação está preparada para execução somente em ambiente de 
 
 #
 
+## Rotas da API
+
+- **<code>GET /participants</code>** buscar todos os participantes cadastrados no banco de dados
+- **<code>POST /participants</code>** cadastrar um participante enviando os atributos **<code>name</code>** e **<code>email</code>** no corpo da requisição
+- **<code>PATCH /participants/:id</code>** atualizar um cadastro de um participante enviando os atributos **<code>name</code>** e **<code>email</code>** no corpo da requisição e **<code>id</code>** como parâmetro da rota
+- **<code>DELETE /participants/:id</code>** deletar um cadastro de participante enviando **<code>id</code>** como parâmetro da rota
+- **<code>POST /draw</code>** realizar o sorteio dos participantes cadastrados e fazer o envio de e-mail via Ethereal
+
+#
+
 ## Exemplo da aplicação funcionando
 
 <img src="https://imgur.com/5RmxUXl.gif">
