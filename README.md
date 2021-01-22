@@ -21,3 +21,12 @@ ATENÇÃO: A aplicação está preparada para execução somente em ambiente de 
 - Assim, o usuário poderá fazer todas as operações de cadastro, edição e exclusão dos participantes do sorteio
 
 - Ao fim, ao clicar no botão Sortear, será exibido o resultado ao final da página e os e-mails *fakes* serão enviados (**os links gerados para visualização dos e-mails serão disponibilizados na console do back-end**)
+
+#
+
+## Exemplo da aplicação funcionando
+
+<img src="https://imgur.com/5RmxUXl.gif">
+<img src="https://imgur.com/MiepDiA.gif">
+<img src="https://imgur.com/P2XWOU8.gif">
+<img src="https://imgur.com/9Pv6I23.gif">
