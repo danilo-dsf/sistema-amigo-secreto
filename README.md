@@ -29,4 +29,4 @@ ATENÇÃO: A aplicação está preparada para execução somente em ambiente de 
 <img src="https://imgur.com/5RmxUXl.gif">
 <img src="https://imgur.com/MiepDiA.gif">
 <img src="https://imgur.com/P2XWOU8.gif">
-<img src="https://imgur.com/9Pv6I23.gif">
+<img src="https://imgur.com/9ouUYsi.gif">
